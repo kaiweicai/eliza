@@ -951,11 +951,12 @@ const startAgents = async () => {
 
 const setProxy = () => {
     const proxy = process.env.AGENT_PROXY;
+    console.log("proxy is:"+proxy);
     if (proxy) {
         elizaLogger.info("start agents use proxy : ", proxy);
         const proxyAgent = new ProxyAgent(proxy);
         setGlobalDispatcher(proxyAgent);
-    }
+    } 
 };
 
 // begin start agents
